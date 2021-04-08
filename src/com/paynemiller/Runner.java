@@ -1,19 +1,13 @@
 package com.paynemiller;
-
-import com.paynemiller.ch2.Greeter;
+import com.paynemiller.ch2.CharcterCounter;
 
 public class Runner {
     public static void main(String[] args) {
-        /*
-        Greeter greeter = new Greeter();
-        greeter.sayHello("Payne");
-        greeter.sayHello("Erick");
-        */
-        Greeter strCount = new Greeter();
-        //strCount.stringCounter("Hello");
-        System.out.println(strCount.stringCounter("ThisHasTen"));
-        System.out.println(strCount.stringCounter("Test 2"));
-        System.out.println(strCount.stringCounter(""));
+        CharcterCounter counter = new CharcterCounter();
+
+        System.out.println(counter.countCharacters("ThisHasTen"));
+        System.out.println(counter.countCharacters("Test 2"));
+        System.out.println(counter.countCharacters(""));
 
 
     }
