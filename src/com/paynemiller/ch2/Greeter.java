@@ -73,6 +73,4 @@ public class Greeter {
       return "The word that was inputted was " + word + " and the number of characters it has is " + counter;
     }
   }
-// question: how to do scanner? It's been a while since I have done one from scratch
-// question: how to make a counter for empty space (if word contains + " ")?
 }
