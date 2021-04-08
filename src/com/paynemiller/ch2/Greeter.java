@@ -62,6 +62,9 @@ public class Greeter {
 
   public String stringCounter (String word) {
     int counter = 0;
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("Please input a string.");
+    String input = keyboard.nextLine();
     if (word.length() == 0) {
       return "Nothing was inputted please try again";
     }
