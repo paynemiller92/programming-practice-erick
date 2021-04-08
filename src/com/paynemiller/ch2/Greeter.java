@@ -2,7 +2,7 @@ package com.paynemiller.ch2;
 
 /**
  * The “Hello, World” program is the first program you learn
- * to write in many languages, but it doesn’t involve any input.
+ * to write in many languages, but it doesn't involve any input.
  * <p>
  * So create a program that prompts for your name and prints a greeting using your name.
  * <p>
