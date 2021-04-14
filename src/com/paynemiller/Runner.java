@@ -1,4 +1,5 @@
 package com.paynemiller;
+
 import com.paynemiller.ch2.CharcterCounter;
 import com.paynemiller.ch2.EscapeCharacters;
 
