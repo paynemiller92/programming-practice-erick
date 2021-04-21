@@ -1,10 +1,10 @@
 package com.paynemiller;
 
-import com.paynemiller.ch2.MadLibGame;
-import com.paynemiller.ch2.SimpleMath;
+import com.paynemiller.ch2.Calculator;
 
 public class Runner {
     public static void main(String[] args) {
-        SimpleMath.doMath();
+        Calculator exercise = new Calculator();
+        exercise.doMath();
     }
 }

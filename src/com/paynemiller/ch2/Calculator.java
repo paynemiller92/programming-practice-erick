@@ -27,25 +27,20 @@ import java.util.Scanner;
         • Implement this program as a GUI program that automatically updates the values when any value changes.
  */
 
-public class SimpleMath {
-    public static void doMath () {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("What is the first number? ");
-        String firstNumber = keyboard.nextLine();
-        System.out.println("What is the second number? ");
-        String secondNumber = keyboard.nextLine();
+public class Calculator {
+    private String firstNumber = null;
+    private String secondNumber = null;
 
-        //promptForInput();
-        //convertToInt(firstNumber,secondNumber);
+    private int first;
+    private int second;
 
-        //converts to integers
-        int first = Integer.parseInt(firstNumber);
-        int second = Integer.parseInt(secondNumber);
-
-        doMathWork(first, second);
+    public void doMath () {
+        promptForInput();
+        convertToInt(firstNumber,secondNumber);
+        performCalculations(first, second);
     }
 
-    public static void doMathWork(int first, int second){
+    public void performCalculations(int first, int second){
         int addition = first + second;
         int subtraction = first - second;
         int multiplication = first * second;
@@ -58,18 +53,16 @@ public class SimpleMath {
 
     }
 
-    // did not work
-    public static void promptForInput() {
+    public void promptForInput() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("What is the first number? ");
-        String firstNumber = keyboard.nextLine();
+        firstNumber = keyboard.nextLine();
         System.out.println("What is the second number? ");
-        String secondNumber = keyboard.nextLine();
-        }
-    // did not work
-    public static void convertToInt(String firstNumber, String secondNumber) {
-            int first = Integer.parseInt(firstNumber);
-            int second = Integer.parseInt(secondNumber);
+        secondNumber = keyboard.nextLine();
         }
 
+    public void convertToInt(String firstNumber, String secondNumber) {
+        first = Integer.parseInt(firstNumber);
+        second = Integer.parseInt(secondNumber);
+        }
 }
