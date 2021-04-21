@@ -4,7 +4,7 @@ package com.paynemiller.ch2;
 import java.util.Scanner;
 
 /**
- * Mad libs are a simple game where you create a story tem- plate with blanks for words. You, or another player, then
+ * Mad libs are a simple game where you create a story template with blanks for words. You, or another player, then
  * construct a list of words and place them into the story, creating an often silly or funny story as a result.
  * Create a simple mad-lib program that prompts for a noun, a verb, an adverb, and an adjective and injects those into a story that you create.
  * <p>
@@ -25,6 +25,10 @@ import java.util.Scanner;
  * 4, Making Decisions, on page 29.
  */
 public class MadLibGame {
+  //in the runner put
+  //MadLibGame game = new MadLibGame();
+  //game.createGame();
+
   public void createGame() {
     MadLib madLib = promptForInput();
     System.out.println(madLib);
@@ -36,6 +40,7 @@ public class MadLibGame {
     String verb = promptForVerb(keyboard);
     String adjective = promptForAdjective(keyboard);
     String adverb = promptForAdverb(keyboard);
+
 
     return new MadLib.Builder()
             .setNoun(noun)
