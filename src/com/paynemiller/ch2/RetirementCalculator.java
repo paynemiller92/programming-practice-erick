@@ -24,6 +24,23 @@ import java.util.Calendar;
  Challenge
 
  • Handle situations where the program returns a negative number by stating that the user can already retire.
+
+Place in main for runner:
+ RetirementCalculator retirementCalculator = new RetirementCalculator();
+ try {
+ int retirementYear = retirementCalculator.calculateRetirementYear(promptForAge());
+ System.out.println("You can retire in " + retirementYear);
+ } catch (EligibleToRetireException e) {
+ System.out.println("You can already retire!");
+ }
+
+ Place under main in runner:
+ private static int promptForAge() {
+ Scanner keyboard = new Scanner(System.in);
+ System.out.println("Enter your current age and press ENTER!");
+ return keyboard.nextInt();
+ }
+
  */
 
 public class RetirementCalculator {
