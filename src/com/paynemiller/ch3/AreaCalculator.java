@@ -24,7 +24,7 @@ import java.util.Scanner;
         • Implement this program as a GUI program that automatically updates the values when any value changes.
  */
 
-public class AreaOfRectangularRoom {
+public class AreaCalculator {
     private int length;
     private int width;
 
@@ -43,12 +43,15 @@ public class AreaOfRectangularRoom {
     }
 
     public void promptForInput(){
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("What is the length of the room in feet? ");
-        length = Integer.parseInt(keyboard.nextLine());
-        System.out.println("What is the width of the room in feet? ");
-        width = Integer.parseInt(keyboard.nextLine());
+        try {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("What is the length of the room in feet? ");
+            length = Integer.parseInt(keyboard.nextLine());
+            System.out.println("What is the width of the room in feet? ");
+            width = Integer.parseInt(keyboard.nextLine());
+        }
+        catch(NumberFormatException e) {
+            promptForInput();
+        }
     }
-// how/where to put the exception and then what to change since I have the input being converted to an int (parse.Int)
-
 }

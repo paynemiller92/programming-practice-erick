@@ -1,11 +1,10 @@
 package com.paynemiller;
 
-import com.paynemiller.ch3.AreaOfRectangularRoom;
+import com.paynemiller.ch3.AreaCalculator;
 
 public class Runner {
     public static void main(String[] args) {
-
-        AreaOfRectangularRoom  rectangleArea = new AreaOfRectangularRoom();
-        rectangleArea.getArea();
+        AreaCalculator calculator = new AreaCalculator();
+        calculator.getArea();
     }
 }
