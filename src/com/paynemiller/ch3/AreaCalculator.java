@@ -30,10 +30,10 @@ public class AreaCalculator {
 
     public void getArea(){
         promptForInput();
-        performCalculations(length,width);
+        performCalculations();
     }
 
-    public void performCalculations(int length, int width)  {
+    public void performCalculations()  {
         int squareFeet = length * width;
         double squareMeters = squareFeet * 0.09290304;
 
