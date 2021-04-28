@@ -1,10 +1,10 @@
 package com.paynemiller;
 
-import com.paynemiller.ch3.AreaCalculator;
+import com.paynemiller.ch3.PizzaDivider;
 
 public class Runner {
     public static void main(String[] args) {
-        AreaCalculator calculator = new AreaCalculator();
-        calculator.getArea();
+        PizzaDivider divider = new PizzaDivider();
+        divider.dividePizza();
     }
 }
