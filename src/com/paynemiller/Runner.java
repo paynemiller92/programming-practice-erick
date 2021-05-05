@@ -3,6 +3,7 @@ package com.paynemiller;
 import com.paynemiller.ch2.Calculator;
 import com.paynemiller.ch2.CharacterCounter;
 import com.paynemiller.ch2.EmptyWordException;
+import com.paynemiller.ch3.PaintCalculator;
 
 import java.util.Scanner;
 
@@ -29,7 +30,14 @@ public class Runner {
         break;
       case 2: startCharacterCounter();
       break;
+      case 6: startPaintCalculator();
+      break;
     }
+  }
+
+  private static void startPaintCalculator(){
+    PaintCalculator paintCalculator = new PaintCalculator();
+    paintCalculator.calculateArea();
   }
 
   private static int gatherInput() {
@@ -58,7 +66,9 @@ public class Runner {
     CHARACTER_COUNTER("Character Counter", 2),
     ESCAPE_CHARACTER_PRINTER("Escape Printer", 3),
     QUOTER("Quoter", 4),
-    RETIREMENT_CALCULATOR("Retirement Calculator", 5);
+    RETIREMENT_CALCULATOR("Retirement Calculator", 5),
+    PAINT_CALCULATOR("Paint Calculator", 6);
+
 
     private String title;
     private int option;
