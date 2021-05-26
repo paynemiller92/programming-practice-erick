@@ -1,9 +1,9 @@
 package com.paynemiller;
 
-import com.paynemiller.ch2.Calculator;
-import com.paynemiller.ch2.CharacterCounter;
-import com.paynemiller.ch2.EmptyWordException;
+import com.paynemiller.ch2.*;
 import com.paynemiller.ch3.PaintCalculator;
+import com.paynemiller.ch3.PizzaDivider;
+import com.paynemiller.ch3.SelfCheckout;
 
 import java.util.Scanner;
 
@@ -29,9 +29,17 @@ public class Runner {
         startCalculator();
         break;
       case 2: startCharacterCounter();
-      break;
-      case 6: startPaintCalculator();
-      break;
+        break;
+      case 3: startEscapeCharacterPrinter();
+        break;
+      case 4: startRetirementCalculator();
+        break;
+      case 5: startPaintCalculator();
+        break;
+      case 6: startPizzaDivider();
+        break;
+      case 7: startSelfCheckout();
+        break;
     }
   }
 
@@ -47,6 +55,32 @@ public class Runner {
   private static void startCalculator() {
     Calculator calculator = new Calculator();
     calculator.doMath();
+  }
+
+  private static void startEscapeCharacterPrinter(){
+    EscapeCharacters printer = new EscapeCharacters();
+    printer.printQuotes();
+  }
+
+  private static void startRetirementCalculator(){
+    gatherInput();
+    RetirementCalculator retirementCalculator = new RetirementCalculator();
+    try {
+      retirementCalculator.calculateRetirementYear(gatherInput());
+    }
+    catch(EligibleToRetireException exception){
+      System.out.print("You can retire");
+    }
+  }
+
+  private static void startPizzaDivider(){
+    PizzaDivider divider = new PizzaDivider();
+    divider.dividePizza();
+  }
+
+  private static void startSelfCheckout(){
+    SelfCheckout checkout = new SelfCheckout();
+    checkout.calculateEverything();
   }
 
   private static void startCharacterCounter() {
@@ -65,10 +99,10 @@ public class Runner {
     CALCULATOR("Calculator", 1),
     CHARACTER_COUNTER("Character Counter", 2),
     ESCAPE_CHARACTER_PRINTER("Escape Printer", 3),
-    QUOTER("Quoter", 4),
-    RETIREMENT_CALCULATOR("Retirement Calculator", 5),
-    PAINT_CALCULATOR("Paint Calculator", 6);
-
+    RETIREMENT_CALCULATOR("Retirement Calculator", 4),
+    PAINT_CALCULATOR("Paint Calculator", 5),
+    PIZZA_DIVIDER("Pizza Divider", 6),
+    SELF_CHECKOUT("Self Checkout", 7);
 
     private String title;
     private int option;
