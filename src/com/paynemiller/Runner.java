@@ -1,9 +1,7 @@
 package com.paynemiller;
 
 import com.paynemiller.ch2.*;
-import com.paynemiller.ch3.PaintCalculator;
-import com.paynemiller.ch3.PizzaDivider;
-import com.paynemiller.ch3.SelfCheckout;
+import com.paynemiller.ch3.*;
 
 import java.util.Scanner;
 
@@ -40,12 +38,11 @@ public class Runner {
         break;
       case 7: startSelfCheckout();
         break;
+      case 8: startCurrencyConverter();
+        break;
+      case 9: startSimpleInterestComputer();
+        break;
     }
-  }
-
-  private static void startPaintCalculator(){
-    PaintCalculator paintCalculator = new PaintCalculator();
-    paintCalculator.calculateArea();
   }
 
   private static int gatherInput() {
@@ -55,6 +52,17 @@ public class Runner {
   private static void startCalculator() {
     Calculator calculator = new Calculator();
     calculator.doMath();
+  }
+
+  private static void startCharacterCounter() {
+    System.out.println("Enter a word!");
+    String word = keyboard.nextLine();
+    CharacterCounter counter = new CharacterCounter();
+    try {
+      counter.countCharacters(word);
+    } catch (EmptyWordException e) {
+      e.printStackTrace(); // TODO: Gracefully handle exception.
+    }
   }
 
   private static void startEscapeCharacterPrinter(){
@@ -73,6 +81,11 @@ public class Runner {
     }
   }
 
+  private static void startPaintCalculator(){
+    PaintCalculator paintCalculator = new PaintCalculator();
+    paintCalculator.calculateArea();
+  }
+
   private static void startPizzaDivider(){
     PizzaDivider divider = new PizzaDivider();
     divider.dividePizza();
@@ -83,16 +96,17 @@ public class Runner {
     checkout.calculateEverything();
   }
 
-  private static void startCharacterCounter() {
-    System.out.println("Enter a word!");
-    String word = keyboard.nextLine();
-    CharacterCounter counter = new CharacterCounter();
-    try {
-      counter.countCharacters(word);
-    } catch (EmptyWordException e) {
-      e.printStackTrace(); // TODO: Gracefully handle exception.
-    }
+  private static void startCurrencyConverter(){
+    CurrencyConverter currencyConverter = new CurrencyConverter();
+    currencyConverter.output();
   }
+
+  private static void startSimpleInterestComputer(){
+    SimpleInterestComputer simpleInterestComputer = new SimpleInterestComputer();
+    simpleInterestComputer.output();
+  }
+
+
 
   private enum Exercise {
 
@@ -102,7 +116,9 @@ public class Runner {
     RETIREMENT_CALCULATOR("Retirement Calculator", 4),
     PAINT_CALCULATOR("Paint Calculator", 5),
     PIZZA_DIVIDER("Pizza Divider", 6),
-    SELF_CHECKOUT("Self Checkout", 7);
+    SELF_CHECKOUT("Self Checkout", 7),
+    CURRENCY_CONVERTER("Currency Converter", 8),
+    SIMPLE_INTEREST_COMPUTER("Simple Interest Computer", 9);
 
     private String title;
     private int option;
