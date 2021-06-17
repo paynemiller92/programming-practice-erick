@@ -32,7 +32,7 @@ public class CompoundInterestComputer {
                 "%n compounded " + compoundedPerYear + " times per year is $" + compoundInterest);
     }
 
-    public void output(){
+    public void performCompoundInterest(){
         promptForInput();
         calculateCompoundInterest();
         showCompoundInterest();

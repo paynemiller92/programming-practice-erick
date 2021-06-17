@@ -113,12 +113,12 @@ public class Runner {
 
     private static void startSimpleInterestComputer() {
         SimpleInterestComputer simpleInterestComputer = new SimpleInterestComputer();
-        simpleInterestComputer.output();
+        simpleInterestComputer.performSimpleInterest();
     }
 
     private static void startCompoundInterestComputer() {
         CompoundInterestComputer compoundInterestComputer = new CompoundInterestComputer();
-        compoundInterestComputer.output();
+        compoundInterestComputer.performCompoundInterest();
     }
 
 

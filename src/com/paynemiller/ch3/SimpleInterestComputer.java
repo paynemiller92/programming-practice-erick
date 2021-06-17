@@ -28,7 +28,7 @@ public class SimpleInterestComputer {
         System.out.print("After " + numYears + " years at " + rateOfInterest * 100 + "%, the investment will be worth $" + simpleInterest);
     }
 
-    public void output() {
+    public void performSimpleInterest() {
         promptForInput();
         calculateSimpleInterest();
         showSimpleInterest();
