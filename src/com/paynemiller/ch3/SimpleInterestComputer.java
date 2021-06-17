@@ -9,7 +9,7 @@ public class SimpleInterestComputer {
     int numYears;
     double simpleInterest;
 
-    public void promptForInput(){
+    public void promptForInput() {
         System.out.print("Enter the principal: ");
         principalAmount = keyboard.nextDouble();
         System.out.print("Enter the rate of interest: ");
@@ -18,21 +18,19 @@ public class SimpleInterestComputer {
         numYears = keyboard.nextInt();
     }
 
-    public void calculateSimpleInterest(){
+    public void calculateSimpleInterest() {
         rateOfInterest = rateOfInterest / 100;
         simpleInterest = principalAmount * (1 + (rateOfInterest * numYears));
         simpleInterest = Math.round(simpleInterest * 100.0) / 100.0; // rounds to the next decimal
     }
 
-    public void showSimpleInterest(){
+    public void showSimpleInterest() {
         System.out.print("After " + numYears + " years at " + rateOfInterest * 100 + "%, the investment will be worth $" + simpleInterest);
     }
 
-    public void output(){
+    public void output() {
         promptForInput();
         calculateSimpleInterest();
         showSimpleInterest();
     }
-
-    //formatting could be fixed
 }
