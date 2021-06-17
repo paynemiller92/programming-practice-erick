@@ -42,6 +42,8 @@ public class Runner {
         break;
       case 9: startSimpleInterestComputer();
         break;
+      case 10: startCompoundInterestComputer();
+        break;
     }
   }
 
@@ -105,6 +107,10 @@ public class Runner {
     SimpleInterestComputer simpleInterestComputer = new SimpleInterestComputer();
     simpleInterestComputer.output();
   }
+  private static void startCompoundInterestComputer(){
+    CompoundInterestComputer compoundInterestComputer = new CompoundInterestComputer();
+    compoundInterestComputer.output();
+  }
 
 
 
@@ -118,7 +124,8 @@ public class Runner {
     PIZZA_DIVIDER("Pizza Divider", 6),
     SELF_CHECKOUT("Self Checkout", 7),
     CURRENCY_CONVERTER("Currency Converter", 8),
-    SIMPLE_INTEREST_COMPUTER("Simple Interest Computer", 9);
+    SIMPLE_INTEREST_COMPUTER("Simple Interest Computer", 9),
+    COMPOUND_INTEREST_COMPUTER("Compound Interest Computer", 10);
 
     private String title;
     private int option;
