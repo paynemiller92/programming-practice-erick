@@ -10,7 +10,7 @@ public class TaxCalculator {
     double subtotal;
     double tax;
     double total;
-//primitive data types / abstract data types
+    
     public void performTaxCalculator() {
         promptForInput();
         if (stateInitials.equalsIgnoreCase("WI")){
