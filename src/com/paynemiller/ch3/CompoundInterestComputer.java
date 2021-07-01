@@ -18,18 +18,19 @@ public class CompoundInterestComputer {
         interestRate = keyboard.nextDouble();
         System.out.print("What is the number of years? ");
         numYears = keyboard.nextInt();
-        System.out.print("What is the number of times the interest %n is compounded per year? ");
+        System.out.print("What is the number of times the interest");
+        System.out.println();
+        System.out.print("is compounded per year? ");
         compoundedPerYear = keyboard.nextInt();
     }
 
     public void calculateCompoundInterest(){
-        interestRate = interestRate / 100;
-        compoundInterest = Math.pow(principalAmount * (1 + (interestRate / compoundedPerYear)), compoundedPerYear* numYears);
+        compoundInterest =  principalAmount * Math.pow(1 + ((interestRate/100) / compoundedPerYear), (compoundedPerYear* numYears));
     }
 
     public void showCompoundInterest(){
-        System.out.print("$" + principalAmount + "invested at " + interestRate + "% for " + numYears + " years" +
-                "%n compounded " + compoundedPerYear + " times per year is $" + compoundInterest);
+        System.out.print("$" + principalAmount + " invested at " + interestRate + "% for " + numYears + " years");
+        System.out.println(" compounded " + compoundedPerYear + " times per year is $" + ((double)Math.round(compoundInterest * 100) / 100));
     }
 
     public void performCompoundInterest(){

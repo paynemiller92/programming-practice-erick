@@ -2,6 +2,7 @@ package com.paynemiller;
 
 import com.paynemiller.ch2.*;
 import com.paynemiller.ch3.*;
+import com.paynemiller.ch4.TaxCalculator;
 
 import java.util.Scanner;
 
@@ -53,6 +54,9 @@ public class Runner {
             case 10:
                 startCompoundInterestComputer();
                 break;
+            case 11:
+                startTaxCalculator();
+                break;
         }
     }
 
@@ -72,7 +76,7 @@ public class Runner {
         try {
             counter.countCharacters(word);
         } catch (EmptyWordException e) {
-            e.printStackTrace(); // TODO: Gracefully handle exception.
+            e.printStackTrace();
         }
     }
 
@@ -121,6 +125,11 @@ public class Runner {
         compoundInterestComputer.performCompoundInterest();
     }
 
+    private static void startTaxCalculator() {
+        TaxCalculator taxCalculator = new TaxCalculator();
+        taxCalculator.performTaxCalculator();
+    }
+
 
     private enum Exercise {
 
@@ -133,7 +142,8 @@ public class Runner {
         SELF_CHECKOUT("Self Checkout", 7),
         CURRENCY_CONVERTER("Currency Converter", 8),
         SIMPLE_INTEREST_COMPUTER("Simple Interest Computer", 9),
-        COMPOUND_INTEREST_COMPUTER("Compound Interest Computer", 10);
+        COMPOUND_INTEREST_COMPUTER("Compound Interest Computer", 10),
+        TAX_CALCULATOR("Tax Calculator", 11);
 
         private String title;
         private int option;
