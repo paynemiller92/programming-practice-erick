@@ -2,6 +2,7 @@ package com.paynemiller;
 
 import com.paynemiller.ch2.*;
 import com.paynemiller.ch3.*;
+import com.paynemiller.ch4.PasswordValidator;
 import com.paynemiller.ch4.TaxCalculator;
 
 import java.util.Scanner;
@@ -56,6 +57,9 @@ public class Runner {
                 break;
             case 11:
                 startTaxCalculator();
+                break;
+            case 12:
+                startPasswordValidator();
                 break;
         }
     }
@@ -130,6 +134,11 @@ public class Runner {
         taxCalculator.performTaxCalculator();
     }
 
+    private static void startPasswordValidator() {
+        PasswordValidator passwordValidator = new PasswordValidator();
+        passwordValidator.performPasswordValidatorHash();
+    }
+
 
     private enum Exercise {
 
@@ -143,7 +152,8 @@ public class Runner {
         CURRENCY_CONVERTER("Currency Converter", 8),
         SIMPLE_INTEREST_COMPUTER("Simple Interest Computer", 9),
         COMPOUND_INTEREST_COMPUTER("Compound Interest Computer", 10),
-        TAX_CALCULATOR("Tax Calculator", 11);
+        TAX_CALCULATOR("Tax Calculator", 11),
+        PASSWORD_VALIDATOR("Password Validator", 12);
 
         private String title;
         private int option;
