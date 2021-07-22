@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 public class PasswordValidator {
     //Exercise 15
-    String username = "test678";
+    String username;
     String usernameAttempt;
-    String correctPassword = "Passw0rd";
+    String correctPassword ;
     String passwordAttempt;
 
     Scanner keyboard = new Scanner(System.in);
+    HashMap<String, String> userPass = new HashMap<>();
 
     public void promptForUsername() {
         System.out.print("What is your username? ");
@@ -39,19 +40,10 @@ public class PasswordValidator {
         }
     }
 
-    public void performPasswordValidator() {
-        promptForUsername();
-        checkUsername();
-    }
-
-/*
-Begin Hash Attempt
-
-    HashMap<String, String> userPass = new HashMap<>();
-
     public void promptForUsernameHash() {
         System.out.print("What is your username? ");
         usernameAttempt = keyboard.next();
+
     }
 
     public void usersAndPasswords() {
@@ -66,16 +58,17 @@ Begin Hash Attempt
     }
 
     public void checkUserHash() {
-        if (userPass.containsKey(username)) {
+        if (userPass.containsKey(usernameAttempt)) {
             promptForPasswordHash();
             checkPasswordHash();
         } else {
             System.out.println("Username is not on file.");
+
         }
     }
 
     public void checkPasswordHash() {
-        if (userPass.containsKey(passwordAttempt)) {
+        if (userPass.get(usernameAttempt).equals(passwordAttempt)) {
             System.out.println("This is correct username found in hash");
         } else {
             System.out.println("wrong password in hash");
@@ -83,8 +76,8 @@ Begin Hash Attempt
     }
 
     public void performPasswordValidatorHash() {
+        usersAndPasswords();
         promptForUsernameHash();
         checkUserHash();
     }
- */
 }

@@ -136,7 +136,7 @@ public class Runner {
 
     private static void startPasswordValidator() {
         PasswordValidator passwordValidator = new PasswordValidator();
-        passwordValidator.performPasswordValidator();
+        passwordValidator.performPasswordValidatorHash();
     }
 
 
