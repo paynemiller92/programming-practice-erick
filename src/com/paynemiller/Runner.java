@@ -2,6 +2,7 @@ package com.paynemiller;
 
 import com.paynemiller.ch2.*;
 import com.paynemiller.ch3.*;
+import com.paynemiller.ch4.LegalDrivingAge;
 import com.paynemiller.ch4.PasswordValidator;
 import com.paynemiller.ch4.TaxCalculator;
 
@@ -60,6 +61,9 @@ public class Runner {
                 break;
             case 12:
                 startPasswordValidator();
+                break;
+            case 13:
+                startLegalDrivingAge();
                 break;
         }
     }
@@ -139,6 +143,11 @@ public class Runner {
         passwordValidator.performPasswordValidatorHash();
     }
 
+    private static void startLegalDrivingAge()  {
+        LegalDrivingAge legalDrivingAge = new LegalDrivingAge();
+        legalDrivingAge.checkIfLegal();
+    }
+
 
     private enum Exercise {
 
@@ -153,7 +162,8 @@ public class Runner {
         SIMPLE_INTEREST_COMPUTER("Simple Interest Computer", 9),
         COMPOUND_INTEREST_COMPUTER("Compound Interest Computer", 10),
         TAX_CALCULATOR("Tax Calculator", 11),
-        PASSWORD_VALIDATOR("Password Validator", 12);
+        PASSWORD_VALIDATOR("Password Validator", 12),
+        LEGAL_DRIVING_AGE("Legal Driving Age", 13) ;
 
         private String title;
         private int option;
